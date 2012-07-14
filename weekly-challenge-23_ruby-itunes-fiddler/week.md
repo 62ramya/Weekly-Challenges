@@ -7,7 +7,7 @@ One can write AppleScript utilities for those types of tasks - check out <a href
 
 Luckily, iTunes keeps an XML copy of the library data (a <a href="http://en.wikipedia.org/wiki/Property_list" title="[new window] Property list - Wikipedia, the free encyclopedia" target="_blank">plist</a>), one I can manipulate in any language of my choice. Since I have been wanting to play with Ruby for years, I decided to make this my first script. Because the file can get quite huge, an event based parser like SAX should be used, whether it's pull or push (here's <a href="http://www.programmersheaven.com/user/pawanspace/blog/609-XML-parsers-Push-versus-Pull-parsers/" title="[new window] XML parsers: Push versus Pull parsers - Pawan's blog" target="_blank">a quick article explaining the difference between push and pull parsers</a>).
 
-Some artefacts <a href="https://github.com/gotofritz/Weekly-Challenges/" title="[new window] code GitHub" target="_blank">available on GitHub</a>.
+Some artefacts <a href="https://github.com/gotofritz/Weekly-Challenges/tree/master/weekly-challenge-23_ruby-itunes-fiddler" title="[new window] code GitHub" target="_blank">available on GitHub</a>.
 
 <h2>Generating an XML iTunes library file with Ruby</h2>
 <pre style="margin:1em 0;-webkit-border-radius:20px;-moz-border-radius:20px;border-radius:20px;background:#bbb;border:2px solid #666;"><code class="user-story">Feature: Generating an XML iTunes library file with Ruby
@@ -1411,4 +1411,4 @@ It works a treat.
 <h2>Challenge 100% complete</h2>
 Farily happy with this - it was reasonably straightforward, it gets the job done, it allowed me to get to know Ruby, and I got the foundation for a flexible system. The code is far from perfect, it's just the bare minimum to pass the tests, but that's the point of TDD - I can go back and refactor it without fear of breaking everything.
 
-The scripts are <a href="https://github.com/gotofritz/Weekly-Challenges/" title="[new window] code GitHub" target="_blank">available on GitHub</a>.
+The scripts are <a href="https://github.com/gotofritz/Weekly-Challenges/tree/master/weekly-challenge-23_ruby-itunes-fiddler" title="[new window] code GitHub" target="_blank">available on GitHub</a>.
