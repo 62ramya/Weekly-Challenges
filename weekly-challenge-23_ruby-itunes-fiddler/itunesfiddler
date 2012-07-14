@@ -1,0 +1,86 @@
+#!/usr/bin/env ruby
+
+# =itunesfiddler
+# parses an XML library file for iTunes into another
+require 'rubygems'
+require 'nokogiri'
+require 'optparse'
+
+
+#reads command line args
+options = {}
+itunesfiddler = OptionParser.new do |opt|
+
+  #help screen
+  opt.banner = "Usage: itunesfiddler --input=FILE [OPTIONS] [COMMAND]"
+  opt.separator  ""
+  opt.separator  "Commands"
+  opt.separator  "   keep_missing_only - only includes track not found in folder, and doesn't print out any playlists. Requires --folder option"
+  opt.separator  "Options"
+
+  #individual options
+  opt.on("-i","--input SRC","input xml file, default iTunes Music Library.xml") do |src|
+    options[:src] = src
+  end
+
+  opt.on("-o","--output [TARGET]","output xml file") do |target|
+    options[:target] = target
+  end
+
+  opt.on("-f","--folder [FOLDER]","folder where files are, or should be, copied to") do |folder|
+    options[:folder] = folder
+  end
+
+  opt.on("-h","--help","help") do
+    puts itunesfiddler
+  end
+
+end
+
+#collects args and quits if something wrong
+itunesfiddler.parse!
+
+unless options[:src]
+  options[:src] = "iTunes Music Library.xml"
+end
+
+unless File.file? options[:src]
+  puts itunesfiddler
+  abort( "ERROR: missing --input file - tried #{options[:src]}" )
+end
+
+unless options[:target]
+  options[:target] = options[:src].clone.insert( -5, " - new" )
+end
+
+#collection of callbacks for SAX parser
+require 'ITunesLibraryCallbacks'
+
+#copies file over
+open( options[:target], 'w' ) do |f|
+  open( options[:src] ) { |r|
+    f << r.readline
+    f << r.readline
+  }
+
+  #FIXME something more elegant is on its way
+  case ARGV[0]
+
+  when "keep_missing_only"
+    unless options[:folder]
+      puts itunesfiddler
+      abort( "ERROR: missing --folder" )
+    end
+    require "ITunesLibraryWriterKeepMissingOnly"
+    $iTLCInstance = ITunesLibraryCallbacks.new( f, ITunesLibraryWriterKeepMissingOnly.new( f, options[:folder] ) )
+
+  else
+    $iTLCInstance = ITunesLibraryCallbacks.new( f )
+
+  end
+  parser = Nokogiri::XML::SAX::Parser.new( $iTLCInstance )
+  parser.parse_file( options[:src] )
+end
+
+puts "done - #{$iTLCInstance.track_count} tracks, created:#{options[:target]}"
+exit( 0 )

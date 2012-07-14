@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Major Version</key><integer>1</integer>
+	<key>Minor Version</key><integer>1</integer>
+	<key>Date</key><date>2012-07-04T13:54:29Z</date>
+	<key>Application Version</key><string>10.6.3</string>
+	<key>Features</key><integer>5</integer>
+	<key>Music Folder</key><string>file://localhost/Volumes/HD1T/Music/</string>
+	<key>Library Persistent ID</key><string>6FDF7A54306E5C17</string>
+	<key>Tracks</key>
+	<dict>
+		<key>45543</key>
+		<dict>
+			<key>Track ID</key><integer>45543</integer>
+			<key>Name</key><string>Fifths (Jazzanova 6 Sickth Mix)</string>
+			<key>Artist</key><string>Ski</string>
+			<key>Album</key><string>Jazzanova: The Remixes, 1997-2000</string>
+			<key>Grouping</key><string>where:de</string>
+			<key>Genre</key><string>ambient-synth-90s</string>
+			<key>Kind</key><string>MPEG audio file</string>
+			<key>Size</key><integer>19718194</integer>
+			<key>Total Time</key><integer>482925</integer>
+			<key>Disc Number</key><integer>2</integer>
+			<key>Disc Count</key><integer>2</integer>
+			<key>Track Number</key><integer>1</integer>
+			<key>Track Count</key><integer>10</integer>
+			<key>Year</key><integer>2000</integer>
+			<key>Date Modified</key><date>2008-12-05T14:26:06Z</date>
+			<key>Date Added</key><date>2008-01-30T09:51:45Z</date>
+			<key>Bit Rate</key><integer>320</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Play Count</key><integer>12</integer>
+			<key>Play Date</key><integer>3321090905</integer>
+			<key>Play Date UTC</key><date>2009-03-28T11:15:05Z</date>
+			<key>Rating</key><integer>80</integer>
+			<key>Album Rating</key><integer>80</integer>
+			<key>Album Rating Computed</key><true/>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>6FDF7A54306E5C2E</string>
+			<key>Track Type</key><string>File</string>
+			<key>File Type</key><integer>1297106739</integer>
+			<key>Location</key><string>file://localhost/Volumes/HD1T/Music/Ski/Jazzanova_%20The%20Remixes,%201997-2000/Fifths%20(Jazzanova%206%20Sickth%20Mix).mp3</string>
+			<key>File Folder Count</key><integer>-1</integer>
+			<key>Library Folder Count</key><integer>-1</integer>
+		</dict>
+		<key>45545</key>
+		<dict>
+			<key>Track ID</key><integer>45545</integer>
+			<key>Name</key><string>Affair In Aruba</string>
+			<key>Artist</key><string>101 Strings Orchestra</string>
+			<key>Album</key><string>That Latin Sound</string>
+			<key>Grouping</key><string>label:Alshire</string>
+			<key>Genre</key><string>kitsch</string>
+			<key>Kind</key><string>MPEG audio file</string>
+			<key>Size</key><integer>3133806</integer>
+			<key>Total Time</key><integer>153678</integer>
+			<key>Track Number</key><integer>5</integer>
+			<key>Year</key><integer>1994</integer>
+			<key>Date Modified</key><date>2008-12-06T21:06:24Z</date>
+			<key>Date Added</key><date>2008-01-30T09:51:46Z</date>
+			<key>Bit Rate</key><integer>160</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Play Count</key><integer>2</integer>
+			<key>Play Date</key><integer>3269081860</integer>
+			<key>Play Date UTC</key><date>2007-08-04T12:17:40Z</date>
+			<key>Rating</key><integer>40</integer>
+			<key>Album Rating</key><integer>40</integer>
+			<key>Album Rating Computed</key><true/>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>6FDF7A54306E5C30</string>
+			<key>Track Type</key><string>File</string>
+			<key>Location</key><string>file://localhost/Volumes/HD1T/Music/101%20Strings%20Orchestra/That%20Latin%20Sound/Affair%20In%20Aruba.mp3</string>
+			<key>File Folder Count</key><integer>-1</integer>
+			<key>Library Folder Count</key><integer>-1</integer>
+		</dict>
+		<key>45547</key>
+		<dict>
+			<key>Track ID</key><integer>45547</integer>
+			<key>Name</key><string>Tonton Du Bled</string>
+			<key>Artist</key><string>113</string>
+			<key>Album</key><string>Tonton Du Bled</string>
+			<key>Grouping</key><string>label:Alariana</string>
+			<key>Genre</key><string>beats-hiphop-classic</string>
+			<key>Kind</key><string>MPEG audio file</string>
+			<key>Size</key><integer>4221985</integer>
+			<key>Total Time</key><integer>261877</integer>
+			<key>Year</key><integer>2000</integer>
+			<key>Date Modified</key><date>2009-07-21T11:21:43Z</date>
+			<key>Date Added</key><date>2008-01-30T09:51:46Z</date>
+			<key>Bit Rate</key><integer>128</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Play Count</key><integer>3</integer>
+			<key>Play Date</key><integer>3279793221</integer>
+			<key>Play Date UTC</key><date>2007-12-06T11:40:21Z</date>
+			<key>Rating</key><integer>60</integer>
+			<key>Album Rating</key><integer>60</integer>
+			<key>Album Rating Computed</key><true/>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>6FDF7A54306E5C31</string>
+			<key>Track Type</key><string>File</string>
+			<key>Location</key><string>file://localhost/Volumes/HD1T/Music/113/Tonton%20Du%20Bled/Tonton%20Du%20Bled.mp3</string>
+			<key>File Folder Count</key><integer>-1</integer>
+			<key>Library Folder Count</key><integer>-1</integer>
+		</dict>
+		<key>45549</key>
+		<dict>
+			<key>Track ID</key><integer>45549</integer>
+			<key>Name</key><string>You are gonna miss me</string>
+			<key>Artist</key><string>13th Floor Elevators</string>
+			<key>Album</key><string>The Psychedelic Sounds Of The 13th Floor Elevators</string>
+			<key>Grouping</key><string>label:Collectables where:us:tx:aus</string>
+			<key>Genre</key><string>rock-psych</string>
+			<key>Kind</key><string>MPEG audio file</string>
+			<key>Size</key><integer>4238301</integer>
+			<key>Total Time</key><integer>148506</integer>
+			<key>Track Number</key><integer>1</integer>
+			<key>Year</key><integer>1966</integer>
+			<key>BPM</key><integer>900</integer>
+			<key>Date Modified</key><date>2008-10-22T20:57:37Z</date>
+			<key>Date Added</key><date>2008-01-30T09:51:46Z</date>
+			<key>Bit Rate</key><integer>224</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Play Count</key><integer>7</integer>
+			<key>Play Date</key><integer>3319691443</integer>
+			<key>Play Date UTC</key><date>2009-03-12T06:30:43Z</date>
+			<key>Rating</key><integer>40</integer>
+			<key>Album Rating</key><integer>40</integer>
+			<key>Album Rating Computed</key><true/>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Sort Album</key><string>Psychedelic Sounds Of The 13th Floor Elevators</string>
+			<key>Persistent ID</key><string>6FDF7A54306E5C32</string>
+			<key>Track Type</key><string>File</string>
+			<key>Location</key><string>file://localhost/Volumes/HD1T/Music/13th%20Floor%20Elevators/The%20Psychedelic%20Sounds%20Of%20The%2013th%20Floor%20Elevators/You%20are%20gonna%20miss%20me.mp3</string>
+			<key>File Folder Count</key><integer>-1</integer>
+			<key>Library Folder Count</key><integer>-1</integer>
+		</dict>
+		<key>45551</key>
+		<dict>
+			<key>Track ID</key><integer>45551</integer>
+			<key>Name</key><string>I Had To Tell You</string>
+			<key>Artist</key><string>13th Floor Elevators</string>
+			<key>Album</key><string>Easter Everywhere</string>
+			<key>Grouping</key><string>label:Collectables where:us:tx:aus</string>
+			<key>Genre</key><string>rock-psych</string>
+			<key>Kind</key><string>MPEG audio file</string>
+			<key>Size</key><integer>3603481</integer>
+			<key>Total Time</key><integer>148375</integer>
+			<key>Track Number</key><integer>19</integer>
+			<key>Year</key><integer>1967</integer>
+			<key>BPM</key><integer>900</integer>
+			<key>Date Modified</key><date>2008-10-22T20:57:56Z</date>
+			<key>Date Added</key><date>2008-01-30T09:51:46Z</date>
+			<key>Bit Rate</key><integer>192</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Play Count</key><integer>3</integer>
+			<key>Play Date</key><integer>3272983456</integer>
+			<key>Play Date UTC</key><date>2007-09-18T16:04:16Z</date>
+			<key>Rating</key><integer>40</integer>
+			<key>Album Rating</key><integer>40</integer>
+			<key>Album Rating Computed</key><true/>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>6FDF7A54306E5C33</string>
+			<key>Track Type</key><string>File</string>
+			<key>Location</key><string>file://localhost/Volumes/HD1T/Music/13th%20Floor%20Elevators/Easter%20Everywhere/I%20Had%20To%20Tell%20You.mp3</string>
+			<key>File Folder Count</key><integer>-1</integer>
+			<key>Library Folder Count</key><integer>-1</integer>
+		</dict>
+		<key>45553</key>
+		<dict>
+			<key>Track ID</key><integer>45553</integer>
+			<key>Name</key><string>Nobody To Love</string>
+			<key>Artist</key><string>13th Floor Elevators</string>
+			<key>Album</key><string>Easter Everywhere</string>
+			<key>Grouping</key><string>label:Collectables where:us:tx:aus</string>
+			<key>Genre</key><string>rock-psych</string>
+			<key>Kind</key><string>MPEG audio file</string>
+			<key>Size</key><integer>2917606</integer>
+			<key>Total Time</key><integer>179670</integer>
+			<key>Track Number</key><integer>15</integer>
+			<key>Year</key><integer>1967</integer>
+			<key>BPM</key><integer>900</integer>
+			<key>Date Modified</key><date>2008-10-22T20:57:55Z</date>
+			<key>Date Added</key><date>2008-01-30T09:51:46Z</date>
+			<key>Bit Rate</key><integer>128</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Play Count</key><integer>2</integer>
+			<key>Play Date</key><integer>3247836206</integer>
+			<key>Play Date UTC</key><date>2006-12-01T14:43:26Z</date>
+			<key>Rating</key><integer>40</integer>
+			<key>Album Rating</key><integer>40</integer>
+			<key>Album Rating Computed</key><true/>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>6FDF7A54306E5C34</string>
+			<key>Track Type</key><string>File</string>
+			<key>Location</key><string>file://localhost/Volumes/HD1T/Music/13th%20Floor%20Elevators/Easter%20Everywhere/Nobody%20To%20Love.mp3</string>
+			<key>File Folder Count</key><integer>-1</integer>
+			<key>Library Folder Count</key><integer>-1</integer>
+		</dict>
+		<key>45555</key>
+		<dict>
+			<key>Track ID</key><integer>45555</integer>
+			<key>Name</key><string>Pictures (Leave Your Body Behind)</string>
+			<key>Artist</key><string>13th Floor Elevators</string>
+			<key>Album</key><string>Easter Everywhere</string>
+			<key>Grouping</key><string>label:Collectables where:us:tx:aus</string>
+			<key>Genre</key><string>rock-psych</string>
+			<key>Kind</key><string>MPEG audio file</string>
+			<key>Size</key><integer>9383871</integer>
+			<key>Total Time</key><integer>389198</integer>
+			<key>Track Number</key><integer>20</integer>
+			<key>Year</key><integer>1967</integer>
+			<key>BPM</key><integer>900</integer>
+			<key>Date Modified</key><date>2008-10-22T20:57:57Z</date>
+			<key>Date Added</key><date>2008-01-30T09:51:46Z</date>
+			<key>Bit Rate</key><integer>192</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Play Count</key><integer>2</integer>
+			<key>Play Date</key><integer>3267391835</integer>
+			<key>Play Date UTC</key><date>2007-07-15T22:50:35Z</date>
+			<key>Rating</key><integer>40</integer>
+			<key>Album Rating</key><integer>40</integer>
+			<key>Album Rating Computed</key><true/>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>6FDF7A54306E5C35</string>
+			<key>Track Type</key><string>File</string>
+			<key>Location</key><string>file://localhost/Volumes/HD1T/Music/13th%20Floor%20Elevators/Easter%20Everywhere/Pictures%20(Leave%20Your%20Body%20Behind).mp3</string>
+			<key>File Folder Count</key><integer>-1</integer>
+			<key>Library Folder Count</key><integer>-1</integer>
+		</dict>
+		<key>45557</key>
+		<dict>
+			<key>Track ID</key><integer>45557</integer>
+			<key>Name</key><string>Dear Dr. Doom</string>
+			<key>Artist</key><string>13th Floor Elevators</string>
+			<key>Album</key><string>Bull Of The Woods</string>
+			<key>Grouping</key><string>label:Collectables where:us:tx:aus</string>
+			<key>Genre</key><string>rock-psych</string>
+			<key>Kind</key><string>MPEG audio file</string>
+			<key>Size</key><integer>4712483</integer>
+			<key>Total Time</key><integer>193384</integer>
+			<key>Year</key><integer>1968</integer>
+			<key>BPM</key><integer>900</integer>
+			<key>Date Modified</key><date>2008-10-22T20:58:08Z</date>
+			<key>Date Added</key><date>2008-01-30T09:51:46Z</date>
+			<key>Bit Rate</key><integer>192</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Play Count</key><integer>2</integer>
+			<key>Play Date</key><integer>3272982440</integer>
+			<key>Play Date UTC</key><date>2007-09-18T15:47:20Z</date>
+			<key>Rating</key><integer>40</integer>
+			<key>Album Rating</key><integer>40</integer>
+			<key>Album Rating Computed</key><true/>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>6FDF7A54306E5C36</string>
+			<key>Track Type</key><string>File</string>
+			<key>Location</key><string>file://localhost/Volumes/HD1T/Music/13th%20Floor%20Elevators/Bull%20Of%20The%20Woods/Dear%20Dr.%20Doom.mp3</string>
+			<key>File Folder Count</key><integer>-1</integer>
+			<key>Library Folder Count</key><integer>-1</integer>
+		</dict>
+		<key>160063</key>
+		<dict>
+			<key>Track ID</key><integer>160063</integer>
+			<key>Name</key><string>A2 - Folkland</string>
+			<key>Artist</key><string>Jean-Michel Lorgere</string>
+			<key>Album</key><string>Homere instrumental Serie N°1</string>
+			<key>Grouping</key><string>label:Homere where:fr</string>
+			<key>Kind</key><string>MPEG audio file</string>
+			<key>Size</key><integer>6714540</integer>
+			<key>Total Time</key><integer>163604</integer>
+			<key>Year</key><integer>1980</integer>
+			<key>BPM</key><integer>900</integer>
+			<key>Date Modified</key><date>2008-08-09T09:57:23Z</date>
+			<key>Date Added</key><date>2008-08-09T09:48:47Z</date>
+			<key>Bit Rate</key><integer>320</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Album Rating</key><integer>40</integer>
+			<key>Album Rating Computed</key><true/>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>717D86D520D7F8E5</string>
+			<key>Track Type</key><string>File</string>
+			<key>Location</key><string>file://localhost/Volumes/HD1T/Music/Jean-Michel%20Lorgere/Homere%20instrumental%20Serie%20N%C2%B01/A2%20-%20Folkland.mp3</string>
+			<key>File Folder Count</key><integer>-1</integer>
+			<key>Library Folder Count</key><integer>-1</integer>
+		</dict>
+	</dict>
+	<key>Playlists</key>
+	<array>
+		<dict>
+			<key>Name</key><string>Library</string>
+			<key>Master</key><true/>
+			<key>Playlist ID</key><integer>79</integer>
+			<key>Playlist Persistent ID</key><string>626C746B98ABE182</string>
+			<key>Visible</key><false/>
+			<key>All Items</key><true/>
+		</dict>
+		<dict>
+			<key>Name</key><string>Music</string>
+			<key>Playlist ID</key><integer>116</integer>
+			<key>Playlist Persistent ID</key><string>7606EFF23960322C</string>
+			<key>Distinguished Kind</key><integer>4</integer>
+			<key>Music</key><true/>
+			<key>All Items</key><true/>
+		</dict>
+		<dict>
+			<key>Name</key><string>90’s Music</string>
+			<key>Playlist ID</key><integer>80</integer>
+			<key>Playlist Persistent ID</key><string>6B6A91E983A433CC</string>
+			<key>Distinguished Kind</key><integer>200</integer>
+			<key>All Items</key><true/>
+			<key>Smart Info</key>
+			<data>
+			AQEAAwAAAAIAAAAZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAA==
+			</data>
+			<key>Smart Criteria</key>
+			<data>
+			U0xzdAABAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAAEAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAAAAAAAB8YAAAAAAAAAAAAAAAAAAAAB
+			AAAAAAAAB88AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgFNMc3QAAQAB
+			AAAAAgAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAB
+			AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAABAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAIAAAAAAAAAAA
+			AAAAAAAAAAEAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+			</data>
+		</dict>
+		<dict>
+			<key>Name</key><string>Ana - Simply</string>
+			<key>Playlist ID</key><integer>546573</integer>
+			<key>Playlist Persistent ID</key><string>0A395BCEC2464F68</string>
+			<key>All Items</key><true/>
+			<key>Playlist Items</key>
+			<array>
+				<dict>
+					<key>Track ID</key><integer>157815</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>167843</integer>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
