@@ -40,17 +40,26 @@ class ITunesLibraryCallbacks < Nokogiri::XML::SAX::Document
       @top_level_key = str.clone.downcase
       @property_row[:key] = str
     elsif is_track_value
-      @property_row[:value] = str
+      unless @property_row[:value]
+        @property_row[:value] = ""
+      end
+      @property_row[:value] += str
     elsif is_track_key
       @property_row[:key] = str
     elsif is_playlist_items_value
       @playlist[:items].push( { :key => "Track ID", :type => "integer", :value => str } )
     elsif is_playlist_value
-      @property_row[:value] = str
+      unless @property_row[:value]
+        @property_row[:value] = ""
+      end
+      @property_row[:value] += str
     elsif is_playlist_key
       @property_row[:key] = str
     elsif is_top_level_value
-      @property_row[:value] = str
+      unless @property_row[:value]
+        @property_row[:value] = ""
+      end
+      @property_row[:value] += str
     elsif is_track_start
       @track[:key] = str
       @track[:dict] = Array.new
@@ -100,6 +109,7 @@ class ITunesLibraryCallbacks < Nokogiri::XML::SAX::Document
   #standard callback
   def end_element element_name
     if is_track_end
+      $stdout.print " ."
       @library_callbacks.track_end @track
     elsif is_track_key
       @track[:dict].push( @property_row )
@@ -288,5 +298,9 @@ class ITunesLibraryCallbacks < Nokogiri::XML::SAX::Document
 
   def error error_message
     abort "ERROR: #{error_message}"
+  end
+
+  def warning error_message
+    puts "WARNING: #{error_message}"
   end
 end

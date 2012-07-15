@@ -6,6 +6,18 @@ require 'rubygems'
 require 'nokogiri'
 require 'optparse'
 
+#gets around HTML entities problem
+class HTMLParser < Nokogiri::XML::SAX::Parser
+  require 'CGI'
+  def parse_file filename
+    raise ArgumentError unless filename
+    raise Errno::ENOENT unless File.exists?(filename)
+    raise Errno::EISDIR if File.directory?(filename)
+    ctx = Nokogiri::XML::SAX::ParserContext.file filename
+    yield CGI.unescapeHTML( ctx ) if block_given?
+    ctx.parse_with self
+  end
+end
 
 #reads command line args
 options = {}
@@ -78,9 +90,11 @@ open( options[:target], 'w' ) do |f|
     $iTLCInstance = ITunesLibraryCallbacks.new( f )
 
   end
-  parser = Nokogiri::XML::SAX::Parser.new( $iTLCInstance )
+  parser = HTMLParser.new( $iTLCInstance )
   parser.parse_file( options[:src] )
 end
 
 puts "done - #{$iTLCInstance.track_count} tracks, created:#{options[:target]}"
 exit( 0 )
+
+

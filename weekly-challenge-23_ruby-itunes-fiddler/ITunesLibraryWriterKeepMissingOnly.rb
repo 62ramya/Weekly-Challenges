@@ -37,7 +37,7 @@ class ITunesLibraryWriterKeepMissingOnly < ITunesLibraryWriter
     the_array.each { |tuple|
       if the_key == tuple[:key]
         str =  URI.unescape( tuple[:value] )
-        return @folder + str[meta( "Music Folder" ).size .. str.size]
+        return @folder + str[meta( "Music Folder" ).size - 1.. str.size]
       end
     }
     return nil
