@@ -1,4 +1,4 @@
-<project name="WeeklyChallenge16" default="all" basedir=".">
+<project name="WeeklyChallenge16" default="hint" basedir=".">
     <description>Gotofritz Weekly Challenge 16</description>
     
   <property environment="env"/>
