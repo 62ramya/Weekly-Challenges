@@ -1,0 +1,145 @@
+#!/usr/bin/env node
+
+
+var
+    program = require('commander')
+  , fs = require('fs')
+  , util = require('util')
+  , files
+  , removed
+  , nextFile
+  , counter  = 1
+  , zeroPad = function(){ return ( "00000000" + counter ).substr(program.zero) + " " ; }
+  , currentFile
+  , maxTries = 5
+  , errors = maxTries
+  ;
+
+//commander is used to read in command line arguments
+program
+  .version('0.1.0')
+  .option('-d, --directory [dir]', 'Source dir', '')
+  .option('-o, --output [dir]', 'Output dir')
+  .option('-z, --zero [zeros]', 'Zero padding', 0 )
+  .option('-s, --start [start_song]', 'Start from song (0 indexed list)', 0)
+  .option('-j, --jump [songs]', 'How many songs to shift by (2)', 2)
+  .parse(process.argv);
+
+//no source dir, no point
+if( !fs.existsSync(program.directory) ){
+  program.help(1);
+}
+
+
+//sets up destination directory
+if( program.output &&
+    program.output !== program.directory ){
+
+  //empties dir and recreates it
+  //RADAR this is not recursive
+  if( fs.existsSync(program.output) ){
+    files = fs.readdirSync(program.output);
+    files
+      .forEach( function(file){
+        fs.unlinkSync( program.output + '/' + file)
+      });
+    fs.rmdirSync(program.output);
+  }
+  fs.mkdirSync( program.output );
+
+} else {
+  program.output = __dirname;
+}
+
+
+//the shuffling happens here
+files = fs.readdirSync(program.directory)
+          .filter(function(file) { return file.charAt(0) !== '.'; })
+          .sort( function( a, b ){
+                  var int_a = parseInt( a.replace( /^(\d+).+$/, "$1" ), 10 ),
+                      int_b = parseInt( b.replace( /^(\d+).+$/, "$1" ), 10 )
+                      ;
+                      return int_a - int_b;
+                  });
+removed  = files.splice( program.start, program.jump );
+files = files.concat( removed );
+
+//now that we know how many files we got, check whether the zero padding is enough and change if it wasn't
+program.zero = -Math.max( program.zero, files.length.toString().length );
+
+console.log( "#!/bin/bash" );
+console.log( "[ -d \"" + program.output + "\" ] && rm -r \"" + program.output + "\"  && mkdir -p \"" + program.output + "\"" );
+files.forEach( function( file, i ){
+  counter = i;
+
+  var
+      new_file = file.replace( /^\d* ?/, zeroPad )
+    ;
+
+  console.log( "cp -p", '"' + program.directory + '/' + file + '"', '"' + program.output + '/' + new_file + '"' )
+})
+process.exit(1);
+
+counter = 0;
+//this function is called recursively to do the copying
+nextFile = function _nextFile(){
+
+  if( 0 === files.length ){
+    return;
+  }
+
+  currentFile = files.shift();
+
+  var
+      new_file = currentFile.replace( /^\d* ?/, zeroPad )
+    , rs = fs.createReadStream( program.directory + '/' + currentFile)
+    , ws = fs.createWriteStream( program.output + '/' + new_file)
+    ;
+
+    rs.on('error', function(err) {
+      console.log( 'error', arguments);
+      ws.end(err);
+    });
+
+    ws.on('error', function(err) {
+      errors -= 1;
+      if( errors > 0 ){
+        console.log( "+++ TRY AGAIN error", errors, currentFile);
+        files.unshift( currentFile );
+      }
+      console.log( 'error ws', err);
+    });
+
+    //when the source ends, ws.end will still write all outstanding data
+    rs.on( "close", function () {
+      ws.end();
+    });
+
+    //when the destination has finished writing all outstanding data, we can finally move on
+    ws.on( "close", function(){
+      var fd = fs.openSync( program.output + '/' + new_file, "r" ),
+          size = fs.fstatSync( fd ).size;
+
+      fs.closeSync( fd );
+
+      if( 10000 <= size ){
+        errors = maxTries;
+        nextFile();
+         console.log( ">", new_file, size);
+      } else {
+         console.log( "+++ TRY AGAIN too small", errors, currentFile);
+        files.unshift( currentFile );
+      }
+
+    });
+
+    //this does the actual copying
+    rs.pipe(ws);
+
+    counter += 1;
+
+    console.log( "copying file", currentFile, "to", new_file )
+};
+
+//start
+nextFile();

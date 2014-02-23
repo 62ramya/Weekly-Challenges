@@ -1,0 +1,2 @@
+These are some quick and dirty scripts to create a bash file with loads of "cp /my/itunes/folder/tune_x.mp3 /FLASHDRIVE/tune_x.mp3" commands (native bash copy being much quicker than node, which often failed).
+They are proofs of concept at different stage of development.

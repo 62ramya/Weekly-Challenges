@@ -1,0 +1,133 @@
+#!/usr/bin/env node
+
+
+var
+    program = require('commander')
+  , child_process = require('child_process')
+  , fs = require('fs')
+  , util = require('util')
+  , files
+  , new_files = []
+  , get_song_duration
+  , nextFile
+  , counter  = 0
+  , zeroPad = function(){ return ("00000000" + counter).substr(program.zero) + " " ; }
+  ;
+
+//commander is used to read in command line arguments
+program
+  .version('0.1.0')
+  .option('-d, --directory [dir]', 'Source dir', '')
+  .option('-o, --output [dir]', 'Output dir')
+  .option('-z, --zero [zeros]', 'Zero padding', 0 )
+  .option('-t, --maxduration [duration]', 'Max duration a song fragment can have', 0)
+  .option('-f, --fade [fade]', 'how many seconds to backtrack when starting next fragment ', "00:03:00")
+  .parse(process.argv);
+
+//no source dir, no point
+if( !fs.existsSync(program.directory) ){
+  program.help(1);
+}
+
+
+//sets up destination directory
+if( program.output &&
+    program.output !== program.directory ){
+
+  //empties dir and recreates it
+  //RADAR this is not recursive
+  if( fs.existsSync(program.output) ){
+    files = fs.readdirSync(program.output);
+    files
+      .forEach( function(file){
+        fs.unlinkSync( program.output + '/' + file)
+      });
+    fs.rmdirSync(program.output);
+  }
+  fs.mkdirSync( program.output );
+
+} else {
+  program.output = __dirname;
+}
+
+
+files = fs.readdirSync(program.directory)
+          .filter(function(file) { return file.charAt(0) !== '.'; });
+
+
+
+get_song_duration =  function _get_song_duration(){
+  if( counter >= files.length ){
+    return;
+  }
+  var song_file = program.directory + '/' + files[counter];
+  console.log( '/usr/local/bin/ffmpeg -i "'+song_file +'"' );
+  var ffmpeg = child_process.exec('/usr/local/bin/ffmpeg -i "'+song_file +'"', function(error, stdout, stderr) {
+   if (error) {
+     console.log(error.stack);
+     console.log('Error code: '+error.code);
+     console.log('Signal received: '+error.signal);
+   }
+   console.log('Child Process STDOUT: '+stdout);
+   console.log('Child Process STDERR: '+stderr);
+    console.log( 1, arguments );
+    counter += 1;
+    get_song_duration();
+  })
+
+ ffmpeg.on('exit', function (code) {
+   console.log('Child process exited with exit code '+code);
+ });
+}
+get_song_duration();
+process.exit();
+
+removed  = files.splice( program.start, program.jump );
+files = files.concat( removed );
+
+//now that we know how many files we got, check whether the zero padding is enough and change if it wasn't
+program.zero = -Math.max( program.zero, files.length.toString().length );
+
+//this function is called recursively to do the copying
+nextFile = function _nextFile(){
+
+  if( 0 === files.length ){
+    return;
+  }
+
+  var
+      file = files.shift()
+    , new_file = file.replace( /^\d* ?/, zeroPad )
+    , rs = fs.createReadStream( program.directory + '/' + file)
+    , ws = fs.createWriteStream( program.output + '/' + new_file)
+    ;
+
+    rs.on('error', function(err) {
+      console.log( 'error', arguments);
+      ws.end(err);
+    });
+
+    ws.on('error', function(err) {
+      console.log( 'error ws', err);
+    });
+
+    //when the source ends, ws.end will still write all outstanding data
+    rs.on( "close", function () {
+      ws.end();
+    });
+
+    //when the destination has finished writing all outstanding data, we can finally move on
+    ws.on( "close", function(){
+      nextFile();
+    });
+
+    //this does the actual copying
+    rs.pipe(ws);
+
+    counter += 1;
+
+    console.log( "copying file", file, "to", new_file )
+};
+
+//start
+nextFile();
