@@ -4,6 +4,11 @@
 ehthumbs.db
 Icon?
 Thumbs.db
+*.sublime-project
+*.sublime-workspace
+week.txt
+local.properties
+buildnumber.txt
 
 _*
 weekly-challenge-02_jsonToGoogleTasks/_lib/*
