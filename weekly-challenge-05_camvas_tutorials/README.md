@@ -1,6 +1,6 @@
 The task: collect HTML5 canvas tutorials and assess them
 
-This is one of my weekly challenges, more info at: http://gotofritz.net/weekly-challenge/blog/canvas-tutorials
+This is one of my weekly challenges, more info at: http://gotofritz.net/blog/weekly-challenge/canvas-tutorials
 
 
 There are quite a few canvas articles doing the rounds, and I have been bookmarking many myself. For this task I just need to go through them and separate the wheat from the chaff.
