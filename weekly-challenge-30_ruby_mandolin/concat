@@ -1,0 +1,108 @@
+#!/usr/bin/env ruby
+
+require "optparse"
+require "FileUtils"
+
+options = { :postfix => "*",
+            :output => ""
+          }
+
+script_options = OptionParser.new do |opt|
+
+  #help screen
+  opt.banner = "List various directories as it if was a single one. Usage: concat [OPTIONS] path/1 path/2 ..."
+
+  #individual options
+  opt.on( "-r", "--recursive", "runs recursively" ) do
+    options[:postfix] = "**/*"
+  end
+
+  #individual options
+  opt.on( "-o", "--output /pth/to/target/dir", "output where to copy files",  ) do |a|
+    options[:output] = a
+  end
+
+  opt.on( "-h", "--help", "help" ) do
+    puts script_options
+    exit(0)
+  end
+
+end
+
+
+# Parse the command-line. Remember there are two forms
+# of the parse method. The 'parse' method simply parses
+# ARGV, while the 'parse!' method parses ARGV and removes
+# any options found there, as well as any parameters for
+# the options. What's left is the list of files to resize.
+script_options.parse!
+
+abort "no output dir specified" unless !options[:output].nil?
+if (!File.directory?(options[:output]))
+  parent = File.dirname(options[:output])
+  if File.directory?(parent)
+    Dir.mkdir(options[:output])
+  else
+    abort "output dir cannot be written to, or does not exist: #{options[:output]}" unless File.directory?(options[:output])
+  end
+end
+
+def find_slice_size( max, preferred )
+  result = ( max.to_f / preferred ).round
+  return ( max.to_f / result )
+end
+
+class Array
+  def is_last_index( index )
+    return index == self.length - 1
+  end
+
+  def each_in_slices( size )
+    returned = Array.new
+    current_sum = size - 1
+    rounded_sum = current_sum.round
+    last_sum = 0
+    self.each_with_index {|val, index|
+      if ( index > current_sum ||
+          self.is_last_index( index ) )
+        returned << self[last_sum..index]
+        last_sum = index + 1
+        current_sum += size
+        rounded_sum = current_sum.round
+      end
+    }
+    return returned
+
+  end
+end
+
+found = Array.new
+ARGV.each{ |folder|
+  Dir[folder + options[:postfix]]
+  .each{ |file|
+    if (file.match(/\.mp3$/))
+      found << file
+    end
+  }
+}
+found
+  .sort! { |x,y| File.basename(x).downcase <=> File.basename(y).downcase }
+# puts found
+
+slice_size = find_slice_size( found.length, 20 )
+puts "LENGTH: #{found.length}"
+puts "SLICE SIZE: #{slice_size}"
+
+found
+  .each_in_slices(slice_size)
+  .each{ |slice|
+  new_dir = File.basename(slice[0])[0..2].gsub(/[ \W]/, "_").upcase +
+           " " +
+           File.basename(slice[-1])[0..2].gsub(/[ \W]/, "_").upcase
+  puts "==> #{new_dir}"
+  new_dir = options[:output] + "/" + new_dir
+  Dir.mkdir( new_dir )
+  slice.each { |file|
+    FileUtils.cp( file, new_dir )
+  }
+}
