@@ -5,9 +5,6 @@ require "optparse"
 require "nokogiri"
 require_relative "iTunesSax/ITunesLibraryCallbacks"
 
-file_path = "/Users/fritz/Desktop/KIDS should have.xml"
-target_path = "./target.txt"
-
 options = { :cmd => "copy" }
 commands = [ "copy", "m4a" ]
 
