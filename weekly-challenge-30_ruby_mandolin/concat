@@ -4,7 +4,8 @@ require "optparse"
 require "FileUtils"
 
 options = { :postfix => "*",
-            :output => ""
+            :output => "",
+            :preferred => 20
           }
 
 script_options = OptionParser.new do |opt|
@@ -20,6 +21,10 @@ script_options = OptionParser.new do |opt|
   #individual options
   opt.on( "-o", "--output /pth/to/target/dir", "output where to copy files",  ) do |a|
     options[:output] = a
+  end
+
+  opt.on( "-n", "--number", "preferred number of files per folder (just a guide)" ) do |a|
+    options[:preferred] = a
   end
 
   opt.on( "-h", "--help", "help" ) do
@@ -89,7 +94,7 @@ found
   .sort! { |x,y| File.basename(x).downcase <=> File.basename(y).downcase }
 # puts found
 
-slice_size = find_slice_size( found.length, 20 )
+slice_size = find_slice_size( found.length, options[:preferred] )
 puts "LENGTH: #{found.length}"
 puts "SLICE SIZE: #{slice_size}"
 
