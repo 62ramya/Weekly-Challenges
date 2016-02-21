@@ -83,6 +83,7 @@ end
 
 found = Array.new
 ARGV.each{ |folder|
+  folder += "/"
   Dir[folder + options[:postfix]]
   .each{ |file|
     if (file.match(/\.mp3$/))
